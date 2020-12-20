@@ -32,10 +32,24 @@ def main():
 
     model_student = reactnet()
     model_student = nn.DataParallel(model_student).cuda()
+    print(model_student)
 
-    # define loss function
+    criterion = nn.CrossEntropyLoss()
+    criterion = criterion.cuda()
+
+    # TO-DO: implement CrossEntropyLabelSmooth in utils/utils.py
+    # criterion_smooth = CrossEntropyLabelSmooth()
+    # criterion_smooth = criterion_smooth.cuda() 
+
+    # TO-DO: implement KD_loss in utils/KD_loss.py
+    # criterion_kd = KD_loss.DistributionLoss()
+
     # define optimizer
+
     # define scheduler
+
+
+
     
     # [ 2 ] load checkpoint
     # if checkpoint exists, load checkpoint,
